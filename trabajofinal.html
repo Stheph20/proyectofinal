@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AlcoholizARTE</title>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="logo.png">
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+
+	<style type="text/css">
+		*{margin: 0; padding: 0;}
+		
+		body{background-image: url("img/bello.jpg");}
+		
+		.logo{margin: 10px 15px 15px 27em;}
+
+		ul{margin: 10px 10px 10px 30px; list-style-type: none;}
+
+		li{ background: #D8D8D8; border-radius: 15px; padding: 10px; margin: 5px; 
+			text-align: center; width: 60px; font-family: 'Roboto Condensed', sans-serif;}
+
+		.news, .none{background: #D8D8D8; border-radius: 15px; padding: 10px; margin: 5px; 
+			text-align: center; width: 120px; font-family: 'Roboto Condensed', sans-serif;}
+		.news:hover{background: #000; width: 10%;}
+		.none:hover{background: #000; width: 10%; font-size: 15px;}
+
+		a{text-decoration: none; color: #000;}
+
+		a:hover{color: #fff; font-size: 20px;}
+
+		ul li:hover{background: #f2d200; width: 10%;}
+		.verde:hover{background: #31B404; width: 10%;}
+		.rojo:hover{background: #FF4000; width: 10%;}
+
+		.slider{margin:10px 15em; padding: 10px; display: block; float: right;}
+
+		footer{background: #000; padding:50px 0px 0px 0px; text-align: center;}
+		.crea{color: #fff; font-family: 'Roboto Condensed', sans-serif;}
+	</style>
+</head>
+<body>
+
+	<img class="logo" width="30%" src="img/alar.png">
+
+			<div class="slider" style="max-width 900px">
+  			<img class="foto" src="img/bares.jpg" style="width:100%">
+ 		    <img class="foto" src="img/asar.jpg" style="width:100%">
+  			<img class="foto" src="img/lBar.jpg" style="width:100%">
+  			<img class="foto" src="img/bar2.jpg" style="width:100%">
+		</div>
+
+		<script>
+			var myIndex = 0;
+			carousel();
+
+			function carousel() {
+    			var i;
+    			var x = document.getElementsByClassName("foto");
+      			for (i = 0; i < x.length; i++) {
+      			x[i].style.display = "none";
+    			}
+    		myIndex++;
+    		if (myIndex > x.length) {myIndex = 1}
+    		x[myIndex-1].style.display = "block";
+    		setTimeout(carousel, 2000); // Change image every 2 seconds
+			}
+		</script>
+
+	
+			<ul>
+				<!--<li><a href="cerveza.php">Cerveza</a></li>-->
+				
+				<li class="rojo"><a href="mezcal.php">Mezcal</a></li>
+				
+				<li><a href="tequila.php">Tequila</a></li>
+				
+				<li class="verde"><a href="vino.php">Vinos</a></li>
+				
+				<li class="rojo"><a href="wisky.php">Whisky</a></li>
+				
+				<li><a href="vodka.php">Vodka</a></li>
+				
+					<br>
+				
+				<li class="none"><a href="mapa.html">Alcoholizate en...</a></li>
+
+				<li class="news"><a href="valida.html">Recibir correos de esta página</a></li>
+			</ul>
+
+<footer>
+	<div class="footer-copyright">
+            <div class="container">
+            	<p class="crea">Created by: Carolina Reyes</p>
+            </div>
+        </div>
+</footer>
+
+
+<?php
+	$edad = $_POST["edad"];
+	echo "tu edad: $edad";
+	if ($edad < 18){
+		echo "no puedes";
+	}else{
+		echo "welcome";
+	}
+	?>
+</body>
+</html>
